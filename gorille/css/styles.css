@@ -1,0 +1,311 @@
+@import 'reset.css';
+@import 'typo.css';
+@import 'layout.css';
+@import 'main.css';
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.boutons{
+  background-color: #208697; /* bleu */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.boutons:hover{
+  background-color: #FFFFFF;
+  color: #208697;
+  transition: all 1s ease;
+}
+
+ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+li{
+  margin-right: 2em;
+}
+
+.logo{
+  width: 8em;
+  margin: 14px;
+}
+
+h1{
+  color: white;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.hero{
+  background-image: url("../images/accueil.jpg");
+  background-attachment: scroll;
+  background-position: center;
+  height: 500px;
+  text-align: center;
+  color: white;
+}
+
+
+.hero_gorille{
+  background-image: url("../images/jungle2.jpg");
+  background-attachment: scroll;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 600px;
+  text-align: center;
+  color: white;
+  background-size: cover;
+  display:flex;
+  align-items: center;
+}
+
+.hero-texte{
+  background-color: rgba(0, 0, 0, 0.5);
+  border: solid white 1px;
+  border-radius: 5px;
+  max-width: 50%;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/************* paragraphe *********************/
+.paragraphe h2{
+  text-align: center;
+}
+
+.paragraphe{
+  margin:10px;
+}
+
+.introduction{
+  margin:40px;
+}
+
+figure img{
+  width: auto;
+  height:180px;
+}
+
+figure h3{
+  text-align: center;
+}
+
+figure{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flex_wrap{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contenu{
+  margin-top: 5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.gorille-détail{
+  max-width: 80%;
+
+}
+
+.prout{
+  width: 100%;
+}
+
+footer{
+  background-color: #b5b6bd;
+  height:100px
+}
+
+footer ul li:not(:nth-child(4)){
+  padding-top: 30px;
+}
+
+/**************** burger menu ******************/
+.burger_menu{
+        display: none;
+    }
+    .menu-toggle .burger-breads span{
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        background-color: black;
+        z-index: 1;
+      }
+      .menu-close .burger-breads span{
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        background: black;
+        z-index: 1;
+        transform:rotate(45deg) translate(-2px, -1px);
+        background: black;
+      }
+      .menu-close .burger-breads span:nth-child(2){
+        transform: rotate(135deg) translate(-6px, 9px);
+      }
+      .menu-close .burger-breads span:nth-child(3){
+        opacity: 0;
+      }
+      /*Style menu*/
+      .main-menu {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        overflow-y: scroll;
+        overflow-x: visible;
+        transition: left 0.3s ease, box-shadow 0.3s ease;
+        z-index: 999;
+      }
+      .main-menu ul {
+        margin: 0;
+        padding: 2.5em 0 0;
+        min-height: 100%;
+        width: 200%;
+        background: rgb(41, 46, 56)
+      }
+      .main-menu a{
+        display: block;
+        padding: .75em 15px;
+        /* line-height: 1em; */
+        font-size: 1em;
+        font-weight: lighter;
+        color: #ffff;
+        text-decoration: none;
+      }
+      .main-menu li:first-child a{
+        border-top: 1px solid rgb(127, 140, 167);
+      }
+      .main-menu a:hover, .main-menu a:focus{
+        background: #333;
+        text-decoration: underline;
+      }
+      .main-menu .menu-close{
+        position: absolute;
+        margin-top: 1em;
+        right: 0;
+      }
+      /*Hiding Menu*/
+      .main-menu{
+        display: none;
+        right: -200px;
+      }
+
+      .main-menu:target{
+        display: block;
+        right: 0;
+        outline: none;
+        box-shadow: 3px 0 12px rgba(0, 0, 0, .25);
+    }
+    .main-menu:target .menu-close{
+        z-index: 1001;
+        padding-bottom: 1px;
+    }
+    .main-menu:target ul{
+        position: relative;
+        z-index: 1000;
+    }
+    .main-menu:target + .backdrop{
+        position: absolute;
+        display: block;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 998;
+        cursor: default;
+    }
+    @supports (position: fixed;){
+        .main-menu,
+        .main-menu:target + .backdrop{
+            position: fixed;
+        }
+    }
+
+@media (max-width: 640px) {
+    .burger_menu{
+      display: block;
+    }
+    .nav-desktop{
+      display: none;
+    }
+}
+
+parent {
+  font-family: 'Fredericka the Great', cursive;
+  border : 1px solid #1a1448;
+  width : 60em;
+  text-align : center;
+  padding : 1em;
+  overflow : hidden;
+}
+
+.child {
+  background-color: #7f8ca7;
+  border : 2px solid #1a1448;
+  width: 4em;
+  transition: all 4s ease-in;
+}
+
+.parent:hover .child {
+    transform: rotate(720deg);
+    margin-left: 50em;
+    border-radius : 100%;
+  }
+
+
+  @media (min-width: 481px) and (max-width: 767px){
+    body{
+      background-color: green;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1024px){
+    body{
+      background-color: yellow;
+    }
+  }
+  @media (min-width: 1025px) and (max-width: 1080px){
+    body{
+      background-color: black;
+      color: #fff;
+    }
+  }
