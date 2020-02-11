@@ -3,10 +3,44 @@
 @import 'layout.css';
 @import 'main.css';
 
+
+
+
+
 body{
   margin: 0;
   padding: 0;
+  font-family: 'Raleway', sans-serif;
 }
+
+h1, h2, h3{
+  font-family: 'Poppins', sans-serif!important;
+}
+
+
+button {
+  background-color: green; /* Green */
+  border: 2px solid rgba(77, 175, 124, 0);
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 100%;
+  font-weight: bold;
+}
+
+button:hover{
+  background-color: white;
+  border: 2px solid rgba(77, 175, 124, 1);
+  color : rgba(77, 175, 124, 1)
+}
+
+a:hover{
+  color: rgba(77, 175, 124, 1);
+}
+
 
 header{
   display: flex;
@@ -15,8 +49,14 @@ header{
   align-items: center;
 }
 
+.flex_row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .boutons{
-  background-color: #208697; /* bleu */
+  background-color: #4FAC80; /* bleu */
     border: none;
     color: white;
     padding: 15px 32px;
@@ -28,8 +68,9 @@ header{
 
 .boutons:hover{
   background-color: #FFFFFF;
-  color: #208697;
-  transition: all 1s ease;
+  color: #4FAC80;
+  transition: all 0.45s ease;
+  border: 2px solid #4FAC80;
 }
 
 ul{
@@ -81,22 +122,45 @@ a{
   background-size: cover;
   display:flex;
   align-items: center;
+  margin-bottom: 80px;
 }
 
 .hero-texte{
   background-color: rgba(0, 0, 0, 0.5);
   border: solid white 1px;
   border-radius: 5px;
-  max-width: 50%;
+  max-width: 80%;
   padding: 20px;
   margin-left: auto;
   margin-right: auto;
 }
 
+.intro{
+  margin: 0 50px;
+  column-count: 3;
+  column-gap: 30px;
+}
+
+.intro p{
+  margin: 0;
+}
+
+.intro h2{
+  column-span: all;
+}
 
 /************* paragraphe *********************/
 .paragraphe h2{
   text-align: center;
+}
+
+.introduction .paragraphe{
+  width: 40%;
+  min-width: 300px;
+}
+
+.introduction .paragraphe img{
+  width: 100%;
 }
 
 .paragraphe{
@@ -126,29 +190,84 @@ figure{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 40px;
+}
+
+@media only screen and (max-width: 800px) {
+   .intro{
+    column-count: 2;
+    column-gap: 30px;
+   }
+}
+
+@media only screen and (max-width: 800px) {
+  .intro{
+   column-count: 1;
+   column-gap: 10px;
+  }
+}
+
+.flex_wrap img{
+transition: all 0.45s ease;
+
+}
+.flex_wrap img:hover{
+ transform: skew(20deg);
+transition: all 0.45s ease;
+
+}
+  
+
+.grid_container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 10px;
+}
+
+@media (max-width:800px){
+  .grid_container {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+}
+
+.txt_intro{
+  margin: auto;
+  display: block;
+  padding: 0 50px;
+}
+
+.txt_intro h2{
+  margin-top: 0;
 }
 
 .contenu{
   margin-top: 5em;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
+  margin-bottom: 4em;
 }
 
 .gorille-détail{
   max-width: 80%;
+  padding-bottom: 5%;
 
 }
 
-.prout{
+.go{
   width: 100%;
+}
+
+.go img{
+  width: 100%;
+  min-width: 100%;
+  padding-bottom: 0;
 }
 
 footer{
   background-color: #b5b6bd;
-  height:100px
+  height:100px;
+  padding: 20px 50px;
 }
 
 footer ul li:not(:nth-child(4)){
@@ -254,7 +373,7 @@ footer ul li:not(:nth-child(4)){
         z-index: 998;
         cursor: default;
     }
-    @supports (position: fixed;){
+    @supports (position: fixed){
         .main-menu,
         .main-menu:target + .backdrop{
             position: fixed;
@@ -270,27 +389,7 @@ footer ul li:not(:nth-child(4)){
     }
 }
 
-parent {
-  font-family: 'Fredericka the Great', cursive;
-  border : 1px solid #1a1448;
-  width : 60em;
-  text-align : center;
-  padding : 1em;
-  overflow : hidden;
-}
 
-.child {
-  background-color: #7f8ca7;
-  border : 2px solid #1a1448;
-  width: 4em;
-  transition: all 4s ease-in;
-}
-
-.parent:hover .child {
-    transform: rotate(720deg);
-    margin-left: 50em;
-    border-radius : 100%;
-  }
 
 
   @media (min-width: 481px) and (max-width: 767px){
